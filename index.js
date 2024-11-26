@@ -1,5 +1,6 @@
-const express = require('express');
-const chatApi = require('./src/api');
+import cors from 'cors';
+import express from 'express';
+import chatApi from './api';
 
 function createChatServer(options = {}) {
   const app = express();

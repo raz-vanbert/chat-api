@@ -1,4 +1,4 @@
-const express = require('express');
+import express from 'express';
 
 const rooms = {}; // In-memory storage for rooms and messages
 

@@ -2,9 +2,13 @@
   "name": "@raz-vanbert/chat-api",
   "version": "1.0.0",
   "main": "index.js",
-  "private": true,
+  "type": "module",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raz-vanbert/chat-api.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
