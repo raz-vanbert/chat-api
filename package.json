@@ -1,6 +1,6 @@
 {
   "name": "@raz-vanbert/chat-api",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "index.js",
   "type": "module",
   "publishConfig": {
@@ -18,7 +18,9 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "apollo-server-express": "^3.13.0",
     "cors": "^2.8.5",
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "graphql": "^16.9.0"
   }
 }

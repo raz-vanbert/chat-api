@@ -1,14 +1,21 @@
+import { ApolloServer } from "apollo-server-express";
 import cors from "cors";
 import express from "express";
-import chatApi from "./src/api.js";
+import { resolvers } from "./resolvers.js";
+import { typeDefs } from "./schema.js";
 
-function createChatServer(options = {}) {
+async function createChatServer(options = {}) {
   const app = express();
   app.use(express.json());
   app.use(cors());
 
-  // Initialize chat API routes
-  chatApi(app);
+  // Initialize Apollo Server
+  const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+  });
+  await server.start();
+  server.applyMiddleware({ app, path: "/graphql" });
 
   return app;
 }
