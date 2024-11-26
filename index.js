@@ -1,6 +1,6 @@
-import cors from 'cors';
-import express from 'express';
-import chatApi from './api';
+import cors from "cors";
+import express from "express";
+import * as chatApi from "./src/api.js";
 
 function createChatServer(options = {}) {
   const app = express();
@@ -13,4 +13,4 @@ function createChatServer(options = {}) {
   return app;
 }
 
-module.exports = createChatServer;
+export default createChatServer;
