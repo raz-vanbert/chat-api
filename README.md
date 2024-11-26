@@ -265,65 +265,9 @@ ReactDOM.render(
 );
 ```
 
-
 ### Creating GraphQL Queries and Mutations
 
 Define the necessary GraphQL operations to interact with the Chat API.
-
-### 1.	Define Operations
-
-```
-src/graphql/operations.js
-
-// src/graphql/operations.js
-import { gql } from '@apollo/client';
-
-export const CREATE_ROOM = gql`
-  mutation CreateRoom($roomName: String!) {
-    createRoom(roomName: $roomName) {
-      roomName
-      messages {
-        username
-        message
-        timestamp
-      }
-    }
-  }
-`;
-
-export const POST_MESSAGE = gql`
-  mutation PostMessage($roomName: String!, $username: String!, $message: String!) {
-    postMessage(roomName: $roomName, username: $username, message: $message) {
-      username
-      message
-      timestamp
-    }
-  }
-`;
-
-export const GET_ROOMS = gql`
-  query GetRooms {
-    getRooms {
-      roomName
-      messages {
-        username
-        message
-        timestamp
-      }
-    }
-  }
-`;
-
-export const GET_MESSAGES = gql`
-  query GetMessages($roomName: String!) {
-    getMessages(roomName: $roomName) {
-      username
-      message
-      timestamp
-    }
-  }
-`;
-```
 
 ### Building the User Interface
 
@@ -336,12 +280,7 @@ src/App.js
 // src/App.js
 import React, { useState } from 'react';
 import { useQuery, useMutation } from '@apollo/client';
-import {
-  GET_ROOMS,
-  CREATE_ROOM,
-  POST_MESSAGE,
-  GET_MESSAGES,
-} from './graphql/operations';
+import { GET_ROOMS, CREATE_ROOM, POST_MESSAGE, GET_MESSAGES } from '@raz-vanbert/chat-api';
 
 const App = () => {
   const [roomName, setRoomName] = useState('');
